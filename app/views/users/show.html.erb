@@ -1,5 +1,30 @@
 <%= @user.email %>
 
+<p>1st banger</p>
+<% if @user.user_track_relationships.where(position: "1").empty? == false %>
+  <a><%= @user.user_track_relationships.where(position: "1").first.track.youtube_url %></a>
+<% end %>
+
+<p>2nd banger</p>
+<% if @user.user_track_relationships.where(position: "2").empty? == false %>
+  <a><%= @user.user_track_relationships.where(position: "2").first.track.youtube_url %></a>
+<% end %>
+
+<p>3rd banger</p>
+<% if @user.user_track_relationships.where(position: "3").empty? == false %>
+  <a><%= @user.user_track_relationships.where(position: "3").first.track.youtube_url %></a>
+<% end %>
+
+<p>4th banger</p>
+<% if @user.user_track_relationships.where(position: "4").empty? == false %>
+  <a><%= @user.user_track_relationships.where(position: "4").first.track.youtube_url %></a>
+<% end %>
+
+<p>5th banger</p>
+<% if @user.user_track_relationships.where(position: "5").empty? == false %>
+  <a><%= @user.user_track_relationships.where(position: "5").first.track.youtube_url %></a>
+<% end %>
+
 <% if current_user == @user %>
   <%= link_to "Log out", destroy_user_session_path, method: :delete %>
 <% end %>
