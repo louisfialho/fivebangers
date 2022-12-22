@@ -2,13 +2,7 @@
   <div class="home-page">
     <div class="home-navbar profile-hide-top">
       <h4>2000 ©</h4>
-      <% if user_signed_in? %>
-        <%= link_to destroy_user_session_path, method: :delete do %>
-           <h4>The club is open</h4>
-        <% end %>
-      <% else %>
-        <h4>The club is open</h4>
-      <% end %>
+      <h4>The club is open</h4>
     </div>
     <div class="logo-home">
       <%= image_tag "logo.png" %>
@@ -18,11 +12,11 @@
       <%= link_to "Get inside", new_user_session_path, class:"home-btn" %>
     </div>
     <div class="footer-home">
-      <%= link_to 'Dancefloor', (user_signed_in? ? user_path(current_user) : club_is_full_path) %>
+      <%= link_to 'Dancefloor', club_is_full_path %>
       <%= link_to 'Lounge Bar', club_is_full_path %>
       <%= link_to 'Terrace', club_is_full_path %>
       <%= link_to 'Smoking Room', club_is_full_path %>
-      <h4 class='backdoor-link'>Backdoor</h4>
+      <%= link_to 'Backdoor', new_user_session_path %>
     </div>
   </div>
   <div id="player"></div>

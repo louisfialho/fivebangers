@@ -14,3 +14,32 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: font-url('HelveticaNeue-BoldItalic.woff2') format('woff2'),
+       font-url('/fonts/HelveticaNeue-BoldItalic.woff') format('woff'),
+       font-url('/fonts/HelveticaNeue-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: font-url('HelveticaNeue-Bold.woff2') format('woff2'),
+       font-url('/fonts/HelveticaNeue-Bold.woff') format('woff'),
+       font-url('/fonts/HelveticaNeue-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Smileys";
+  src: font-url('Smileys.eot') format('embedded-opentype'),
+       font-url('Smileys.ttf') format('truetype');
+}
+
+$helvetica: "Helvetica Neue";
+// Define fonts for body and headers
+$body-font: $helvetica, "Helvetica", "sans-serif";
+$headers-font: $helvetica, "Helvetica", "sans-serif";
+$password: "Smileys";

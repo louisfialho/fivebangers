@@ -18,3 +18,6 @@ require("channels")
 
 import "controllers"
 import "bootstrap"
+
+import { errorDisplay } from "../components/error.js";
+errorDisplay();
