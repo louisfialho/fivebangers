@@ -5,11 +5,13 @@
   <a><%= @user.user_track_relationships.where(position: "1").first.track.youtube_url %></a>
 <% end %>
 
-<%= form_for Track.new, :url => create_track_path(@track) do |f| %>
-  <%= f.label :"update url" %>
-  <%= f.text_field :youtube_url %>
-  <%= hidden_field_tag 'position', '1'  %>
-  <%= f.submit %>
+<% if current_user == @user %>
+  <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
+    <%= f.label :"update url" %>
+    <%= f.text_field :youtube_url %>
+    <%= hidden_field_tag 'position', '1'  %>
+    <%= f.submit %>
+  <% end %>
 <% end %>
 
 <p>2nd banger</p>
@@ -17,11 +19,13 @@
   <a><%= @user.user_track_relationships.where(position: "2").first.track.youtube_url %></a>
 <% end %>
 
-<%= form_for Track.new, :url => create_track_path(@track) do |f| %>
-  <%= f.label :"update url" %>
-  <%= f.text_field :youtube_url %>
-  <%= hidden_field_tag 'position', '2'  %>
-  <%= f.submit %>
+<% if current_user == @user %>
+  <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
+    <%= f.label :"update url" %>
+    <%= f.text_field :youtube_url %>
+    <%= hidden_field_tag 'position', '2'  %>
+    <%= f.submit %>
+  <% end %>
 <% end %>
 
 <p>3rd banger</p>
@@ -29,11 +33,13 @@
   <a><%= @user.user_track_relationships.where(position: "3").first.track.youtube_url %></a>
 <% end %>
 
-<%= form_for Track.new, :url => create_track_path(@track) do |f| %>
-  <%= f.label :"update url" %>
-  <%= f.text_field :youtube_url %>
-  <%= hidden_field_tag 'position', '3'  %>
-  <%= f.submit %>
+<% if current_user == @user %>
+  <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
+    <%= f.label :"update url" %>
+    <%= f.text_field :youtube_url %>
+    <%= hidden_field_tag 'position', '3'  %>
+    <%= f.submit %>
+  <% end %>
 <% end %>
 
 <p>4th banger</p>
@@ -41,11 +47,13 @@
   <a><%= @user.user_track_relationships.where(position: "4").first.track.youtube_url %></a>
 <% end %>
 
-<%= form_for Track.new, :url => create_track_path(@track) do |f| %>
-  <%= f.label :"update url" %>
-  <%= f.text_field :youtube_url %>
-  <%= hidden_field_tag 'position', '4'  %>
-  <%= f.submit %>
+<% if current_user == @user %>
+  <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
+    <%= f.label :"update url" %>
+    <%= f.text_field :youtube_url %>
+    <%= hidden_field_tag 'position', '4'  %>
+    <%= f.submit %>
+  <% end %>
 <% end %>
 
 <p>5th banger</p>
@@ -53,11 +61,13 @@
   <a><%= @user.user_track_relationships.where(position: "5").first.track.youtube_url %></a>
 <% end %>
 
-<%= form_for Track.new, :url => create_track_path(@track) do |f| %>
-  <%= f.label :"update url" %>
-  <%= f.text_field :youtube_url %>
-  <%= hidden_field_tag 'position', '5'  %>
-  <%= f.submit %>
+<% if current_user == @user %>
+  <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
+    <%= f.label :"update url" %>
+    <%= f.text_field :youtube_url %>
+    <%= hidden_field_tag 'position', '5'  %>
+    <%= f.submit %>
+  <% end %>
 <% end %>
 
 <% @user.user_track_relationships.where(position: "archived").order("updated_at DESC").each do |user_track_relationship| %>
