@@ -2,7 +2,7 @@
 
 <p>1st banger</p>
 <% if @user.user_track_relationships.where(position: "1").empty? == false %>
-  <a><%= @user.user_track_relationships.where(position: "1").first.track.youtube_url %></a>
+  <%= link_to @user.user_track_relationships.where(position: "1").first.track.youtube_url, @user.user_track_relationships.where(position: "1").first.track.youtube_url, target: :_blank%>
 <% end %>
 
 <% if current_user == @user %>
@@ -16,7 +16,7 @@
 
 <p>2nd banger</p>
 <% if @user.user_track_relationships.where(position: "2").empty? == false %>
-  <a><%= @user.user_track_relationships.where(position: "2").first.track.youtube_url %></a>
+    <%= link_to @user.user_track_relationships.where(position: "2").first.track.youtube_url, @user.user_track_relationships.where(position: "2").first.track.youtube_url, target: :_blank%>
 <% end %>
 
 <% if current_user == @user %>
@@ -30,7 +30,7 @@
 
 <p>3rd banger</p>
 <% if @user.user_track_relationships.where(position: "3").empty? == false %>
-  <a><%= @user.user_track_relationships.where(position: "3").first.track.youtube_url %></a>
+    <%= link_to @user.user_track_relationships.where(position: "3").first.track.youtube_url, @user.user_track_relationships.where(position: "3").first.track.youtube_url, target: :_blank%>
 <% end %>
 
 <% if current_user == @user %>
@@ -44,7 +44,7 @@
 
 <p>4th banger</p>
 <% if @user.user_track_relationships.where(position: "4").empty? == false %>
-  <a><%= @user.user_track_relationships.where(position: "4").first.track.youtube_url %></a>
+    <%= link_to @user.user_track_relationships.where(position: "4").first.track.youtube_url, @user.user_track_relationships.where(position: "4").first.track.youtube_url, target: :_blank%>
 <% end %>
 
 <% if current_user == @user %>
@@ -58,7 +58,7 @@
 
 <p>5th banger</p>
 <% if @user.user_track_relationships.where(position: "5").empty? == false %>
-  <a><%= @user.user_track_relationships.where(position: "5").first.track.youtube_url %></a>
+    <%= link_to @user.user_track_relationships.where(position: "5").first.track.youtube_url, @user.user_track_relationships.where(position: "5").first.track.youtube_url, target: :_blank%>
 <% end %>
 
 <% if current_user == @user %>
@@ -69,6 +69,8 @@
     <%= f.submit %>
   <% end %>
 <% end %>
+
+<p>Archivesss</p>
 
 <% @user.user_track_relationships.where(position: "archived").order("updated_at DESC").each do |user_track_relationship| %>
   <p><%= user_track_relationship.track.youtube_url %></p> <br>
