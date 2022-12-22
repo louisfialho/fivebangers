@@ -70,6 +70,12 @@
   <% end %>
 <% end %>
 
+<p>Dancefloor</p>
+
+<% @dancefloor.each do |user| %>
+  <%= link_to user.email, user_path(user) %>
+<% end %>
+
 <p>Archivesss</p>
 
 <% @user.user_track_relationships.where(position: "archived").order("updated_at DESC").each do |user_track_relationship| %>

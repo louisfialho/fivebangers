@@ -3,5 +3,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @dancefloor = []
+    UserTrackRelationship.all.order(updated_at: :desc).each do |relationship|
+      @dancefloor.push(relationship.user) unless @dancefloor.include?(relationship.user)
+    end
   end
+
 end
