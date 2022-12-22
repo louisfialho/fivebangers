@@ -60,7 +60,7 @@
   <%= f.submit %>
 <% end %>
 
-<% @user.user_track_relationships.where(position: "archived").reverse_each do |user_track_relationship| %>
+<% @user.user_track_relationships.where(position: "archived").order("created_at DESC").each do |user_track_relationship| %>
   <p><%= user_track_relationship.track.youtube_url %></p> <br>
 <% end %>
 
