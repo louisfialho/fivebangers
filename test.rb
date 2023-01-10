@@ -1,7 +1,6 @@
 require File.expand_path('config/environment', __dir__)
+require 'securerandom'
 
-@dancefloor = []
-UserTrackRelationship.all.order(updated_at: :desc).each do |relationship|
-  @dancefloor.push(relationship.user) unless @dancefloor.include?(relationship.user)
-end
-p @dancefloor
+youtube_url = "https://www.youtube.com/watch?v=B-d5l0nkStA"
+youtube_url = youtube_url + SecureRandom.urlsafe_base64 if youtube_url.length < 50
+p youtube_url
