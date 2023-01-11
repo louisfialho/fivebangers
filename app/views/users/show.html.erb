@@ -1,5 +1,8 @@
 <div class="profile-content">
     <h1><%= @user.email %></h1>
+    <% if !@user.username.nil? %>
+      <h1><%= @user.username %></h1>
+    <% end %>
     <div class="youtube-links">
       <ul>
         <% for i in 1..5 %>
@@ -12,7 +15,9 @@
       </ul>
     </div>
     <div class="updated-at">
-      © <%= link_to UserTrackRelationship.where(user: @user).last.created_at.strftime("%d/%m/%Y"), destroy_user_session_path, method: :delete %> ©
+      <% if ! UserTrackRelationship.where(user: @user).empty? %>
+        © <%= link_to UserTrackRelationship.where(user: @user).last.created_at.strftime("%d/%m/%Y"), destroy_user_session_path, method: :delete %> ©
+      <% end %>
     </div>
 </div>
 
@@ -79,9 +84,11 @@
 
 <p>Archivesss</p>
 
+<!--
 <% @user.user_track_relationships.where(position: "archived").order("updated_at DESC").each do |user_track_relationship| %>
   <p><%= user_track_relationship.track.youtube_url %></p> <br>
 <% end %>
+-->
 
 <% if current_user == @user %>
   <%= link_to "Log out", destroy_user_session_path, method: :delete %>
