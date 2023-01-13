@@ -1,5 +1,10 @@
 <%= link_to "Cancel", user_path(@user) %>
 
+<%= form_with model: @user do |f| %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.submit %>
+<% end %>
 
 <% if current_user == @user %>
   <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
