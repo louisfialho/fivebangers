@@ -1,0 +1,47 @@
+<%= link_to "Cancel", user_path(@user) %>
+
+
+<% if current_user == @user %>
+  <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
+    <%= f.label :"update url" %>
+    <%= f.text_field :youtube_url %>
+    <%= hidden_field_tag 'position', '1'  %>
+    <%= f.submit %>
+  <% end %>
+<% end %>
+
+<% if current_user == @user %>
+  <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
+    <%= f.label :"update url" %>
+    <%= f.text_field :youtube_url %>
+    <%= hidden_field_tag 'position', '2'  %>
+    <%= f.submit %>
+  <% end %>
+<% end %>
+
+<% if current_user == @user %>
+  <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
+    <%= f.label :"update url" %>
+    <%= f.text_field :youtube_url %>
+    <%= hidden_field_tag 'position', '3'  %>
+    <%= f.submit %>
+  <% end %>
+<% end %>
+
+<% if current_user == @user %>
+  <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
+    <%= f.label :"update url" %>
+    <%= f.text_field :youtube_url %>
+    <%= hidden_field_tag 'position', '4'  %>
+    <%= f.submit %>
+  <% end %>
+<% end %>
+
+<% if current_user == @user %>
+  <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
+    <%= f.label :"update url" %>
+    <%= f.text_field :youtube_url %>
+    <%= hidden_field_tag 'position', '5'  %>
+    <%= f.submit %>
+  <% end %>
+<% end %>

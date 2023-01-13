@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => 'registrations'}
   root to: 'pages#home'
+  get 'pages/welcome', to: 'pages#welcome', as: "welcome"
   get 'users/:id', to: 'users#show', as: :user
+  get "users/:id/edit", to: "users#edit", as: :edit_user
   get "tracks/new", to: "tracks#new"
   post "tracks", to: "tracks#create", as: :create_track
   get '/errors/club_is_full', to: 'pages#club_is_full', as: "club_is_full"
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
