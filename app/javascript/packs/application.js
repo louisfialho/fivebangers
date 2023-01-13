@@ -20,7 +20,5 @@ import "controllers"
 import "bootstrap"
 
 import { errorDisplay } from "../components/error.js";
-import { passwordFont } from "../components/password.js";
 
 errorDisplay();
-passwordFont();

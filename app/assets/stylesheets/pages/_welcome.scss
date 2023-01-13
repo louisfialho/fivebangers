@@ -1,0 +1,62 @@
+.welcome-container {
+  padding: 20px 30px;
+  h3 {
+    color: black;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-size: 28px;
+    text-align: justify;
+    @media screen and (max-width: $break-large){
+      font-size: 19px;
+    }
+  }
+  min-height: 100vh;
+  a {
+    text-decoration: none;
+  }
+}
+
+.blink_me {
+  @media screen and (max-width: $break-large){
+    font-size: 19px;
+  }
+  -webkit-animation: blinker 1s linear infinite; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: blinker 1s linear infinite; /* Firefox < 16 */
+      -ms-animation: blinker 1s linear infinite; /* Internet Explorer */
+       -o-animation: blinker 1s linear infinite; /* Opera < 12.1 */
+          animation: blinker 1s linear infinite;
+}
+
+
+.welcome-text {
+  display: none;
+  opacity: 0;
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 1s; /* Firefox < 16 */
+      -ms-animation: fadein 1s; /* Internet Explorer */
+       -o-animation: fadein 1s; /* Opera < 12.1 */
+          animation: fadein 1s;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes blinkershow {
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#start-btn {
+  &:hover {
+    cursor: pointer;
+  }
+}
