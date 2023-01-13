@@ -6,6 +6,11 @@
 
 <div class="profile-content">
     <h1><%= @user.username %></h1>
+
+    <div class="user-description">
+      <span>"</span><span id="description"><%= @user.description || "CLICK TO ADD A DESCRIPTION" %></span><span>"</span>
+    </div>
+
     <div class="youtube-links">
       <ul>
         <% for i in 1..5 %>
