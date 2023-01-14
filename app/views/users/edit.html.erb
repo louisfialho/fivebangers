@@ -9,24 +9,43 @@
 
     <div class="youtube-links">
       <ul>
-        <% for i in 1..5 %>
-          <% if @user.user_track_relationships.where(position: i).empty? %>
-            <% if i==1 %>
-              <li class="youtube-link" id="link-1" display="">https://www.youtube.com/ClickToPasteTheYTLinkOfYour1stBanger</li>
-              <li class="youtube-link" id="cursor-1" display="none">|</li>
-            <% elsif i==2 %>
-              <li class="youtube-link">https://www.youtube.com/ClickToPasteTheYTLinkOfYour2ndBanger</li>
-            <% elsif i==3 %>
-              <li class="youtube-link">https://www.youtube.com/ClickToPasteTheYTLinkOfYour3rdBanger</li>
-            <% elsif i==4 %>
-              <li class="youtube-link">https://www.youtube.com/ClickToPasteTheYTLinkOfYour4thBanger</li>
-            <% elsif i==5 %>
-              <li class="youtube-link">https://www.youtube.com/ClickToPasteTheYTLinkOfYour5thBanger</li>
+        <li>
+            <%= form_for Track.new, :url => create_track_path(@track), :html => { :id => "form-track-1" } do |f| %>
+              <%= f.text_field :youtube_url, placeholder: "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour1stBanger", id: "input-form-1" %>
+              <%= hidden_field_tag 'position', '1'  %>
             <% end %>
-          <% else %>
-            <li class="youtube-link"><%= link_to @user.user_track_relationships.where(position: i).first.track.youtube_url, @user.user_track_relationships.where(position: i).first.track.youtube_url, target: :_blank %></li>
-          <% end %>
-        <% end %>
+        </li>
+        <li>
+            <%= form_for Track.new, :url => create_track_path(@track), :html => { :id => "form-track-2" } do |f| %>
+              <%= f.label :"update url" %>
+              <%= f.text_field(:youtube_url, id: "input-form-2") %>
+              <%= hidden_field_tag 'position', '2'  %>
+              <%= f.submit %>
+            <% end %>
+        <li>
+            <%= form_for Track.new, :url => create_track_path(@track), :html => { :id => "form-track-3" } do |f| %>
+              <%= f.label :"update url" %>
+              <%= f.text_field(:youtube_url, id: "input-form-3") %>
+              <%= hidden_field_tag 'position', '3'  %>
+              <%= f.submit %>
+            <% end %>
+        </li>
+        <li>
+            <%= form_for Track.new, :url => create_track_path(@track), :html => { :id => "form-track-4" } do |f| %>
+              <%= f.label :"update url" %>
+              <%= f.text_field(:youtube_url, id: "input-form-4") %>
+              <%= hidden_field_tag 'position', '4'  %>
+              <%= f.submit %>
+            <% end %>
+        </li>
+        <li>
+            <%= form_for Track.new, :url => create_track_path(@track), :html => { :id => "form-track-5" } do |f| %>
+              <%= f.label :"update url" %>
+              <%= f.text_field(:youtube_url, id: "input-form-5") %>
+              <%= hidden_field_tag 'position', '5'  %>
+              <%= f.submit %>
+            <% end %>
+        </li>
       </ul>
     </div>
     <div class="updated-at">
@@ -40,49 +59,4 @@
   <%= f.label :description %>
   <%= f.text_field :description %>
   <%= f.submit %>
-<% end %>
-
-<% if current_user == @user %>
-  <%= form_for Track.new, :url => create_track_path(@track), :html => { :id => "form-track-1" } do |f| %>
-    <%= f.label :"update url" %>
-    <%= f.text_field(:youtube_url, id: "input-form-1") %>
-    <%= hidden_field_tag 'position', '1'  %>
-    <%= f.submit %>
-  <% end %>
-<% end %>
-
-<% if current_user == @user %>
-  <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
-    <%= f.label :"update url" %>
-    <%= f.text_field :youtube_url %>
-    <%= hidden_field_tag 'position', '2'  %>
-    <%= f.submit %>
-  <% end %>
-<% end %>
-
-<% if current_user == @user %>
-  <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
-    <%= f.label :"update url" %>
-    <%= f.text_field :youtube_url %>
-    <%= hidden_field_tag 'position', '3'  %>
-    <%= f.submit %>
-  <% end %>
-<% end %>
-
-<% if current_user == @user %>
-  <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
-    <%= f.label :"update url" %>
-    <%= f.text_field :youtube_url %>
-    <%= hidden_field_tag 'position', '4'  %>
-    <%= f.submit %>
-  <% end %>
-<% end %>
-
-<% if current_user == @user %>
-  <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
-    <%= f.label :"update url" %>
-    <%= f.text_field :youtube_url %>
-    <%= hidden_field_tag 'position', '5'  %>
-    <%= f.submit %>
-  <% end %>
 <% end %>
