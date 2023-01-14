@@ -15,7 +15,15 @@
       <ul>
         <% for i in 1..5 %>
           <% if @user.user_track_relationships.where(position: i).empty? %>
-            <li class="youtube-link">add the YT link of your ith banger</li>
+            <% if i==1 %>
+              <li class="youtube-link">https://www.youtube.com/EditToAddTheYTLinkOfYour1stBanger</li>
+            <% elsif i==2 %>
+              <li class="youtube-link">https://www.youtube.com/EditToAddTheYTLinkOfYour2ndBanger</li>
+            <% elsif i==3 %>
+              <li class="youtube-link">https://www.youtube.com/EditToAddTheYTLinkOfYour3rdBanger</li>
+            <% else %>
+              <li class="youtube-link">https://www.youtube.com/EditToAddTheYTLinkOfYour<%=i%>thBanger</li>
+            <% end %>
           <% else %>
             <li class="youtube-link"><%= link_to @user.user_track_relationships.where(position: i).first.track.youtube_url, @user.user_track_relationships.where(position: i).first.track.youtube_url, target: :_blank %></li>
           <% end %>

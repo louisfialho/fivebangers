@@ -20,5 +20,7 @@ import "controllers"
 import "bootstrap"
 
 import { errorDisplay } from "../components/error.js";
+import { editProfile } from "../components/editProfile.js";
 
 errorDisplay();
+editProfile();
