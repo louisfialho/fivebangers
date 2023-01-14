@@ -10,41 +10,41 @@
     <div class="youtube-links">
       <ul>
         <li>
-            <%= form_for Track.new, :url => create_track_path(@track), :html => { :id => "form-track-1" } do |f| %>
-              <%= f.text_field :youtube_url, placeholder: "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour1stBanger", id: "input-form-1" %>
-              <%= hidden_field_tag 'position', '1'  %>
-            <% end %>
+          <%= form_for Track.new, :url => create_track_path(@track), :html => { :id => "form-track-1" } do |f| %>
+            <%= f.text_field :youtube_url, placeholder: "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour1stBanger", id: "input-form-1" %>
+            <%= hidden_field_tag 'position', '1'  %>
+          <% end %>
         </li>
         <li>
-            <%= form_for Track.new, :url => create_track_path(@track), :html => { :id => "form-track-2" } do |f| %>
-              <%= f.label :"update url" %>
-              <%= f.text_field(:youtube_url, id: "input-form-2") %>
-              <%= hidden_field_tag 'position', '2'  %>
-              <%= f.submit %>
-            <% end %>
+          <%= form_for Track.new, :url => create_track_path(@track), :html => { :id => "form-track-2" } do |f| %>
+            <%= f.label :"update url" %>
+            <%= f.text_field(:youtube_url, id: "input-form-2") %>
+            <%= hidden_field_tag 'position', '2'  %>
+            <%= f.submit %>
+          <% end %>
         <li>
-            <%= form_for Track.new, :url => create_track_path(@track), :html => { :id => "form-track-3" } do |f| %>
-              <%= f.label :"update url" %>
-              <%= f.text_field(:youtube_url, id: "input-form-3") %>
-              <%= hidden_field_tag 'position', '3'  %>
-              <%= f.submit %>
-            <% end %>
+          <%= form_for Track.new, :url => create_track_path(@track), :html => { :id => "form-track-3" } do |f| %>
+            <%= f.label :"update url" %>
+            <%= f.text_field(:youtube_url, id: "input-form-3") %>
+            <%= hidden_field_tag 'position', '3'  %>
+            <%= f.submit %>
+          <% end %>
         </li>
         <li>
-            <%= form_for Track.new, :url => create_track_path(@track), :html => { :id => "form-track-4" } do |f| %>
-              <%= f.label :"update url" %>
-              <%= f.text_field(:youtube_url, id: "input-form-4") %>
-              <%= hidden_field_tag 'position', '4'  %>
-              <%= f.submit %>
-            <% end %>
+          <%= form_for Track.new, :url => create_track_path(@track), :html => { :id => "form-track-4" } do |f| %>
+            <%= f.label :"update url" %>
+            <%= f.text_field(:youtube_url, id: "input-form-4") %>
+            <%= hidden_field_tag 'position', '4'  %>
+            <%= f.submit %>
+          <% end %>
         </li>
         <li>
-            <%= form_for Track.new, :url => create_track_path(@track), :html => { :id => "form-track-5" } do |f| %>
-              <%= f.label :"update url" %>
-              <%= f.text_field(:youtube_url, id: "input-form-5") %>
-              <%= hidden_field_tag 'position', '5'  %>
-              <%= f.submit %>
-            <% end %>
+          <%= form_for Track.new, :url => create_track_path(@track), :html => { :id => "form-track-5" } do |f| %>
+            <%= f.label :"update url" %>
+            <%= f.text_field(:youtube_url, id: "input-form-5") %>
+            <%= hidden_field_tag 'position', '5'  %>
+            <%= f.submit %>
+          <% end %>
         </li>
       </ul>
     </div>

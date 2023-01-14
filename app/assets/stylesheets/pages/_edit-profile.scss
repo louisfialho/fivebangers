@@ -4,4 +4,13 @@
 
 #input-form-1 {
   width: 100%;
+  text-align: center;
+}
+
+#input-form-1:focus {
+  outline: none;
+}
+
+#input-form-1:focus::placeholder {
+  color: transparent;
 }
