@@ -1,6 +1,7 @@
 #input-form-1 {
   width: 100%;
   text-align: center;
+  font-weight: 700;
 }
 
 #input-form-1:focus {
@@ -9,6 +10,10 @@
 
 #input-form-1:focus::placeholder {
   color: transparent;
+}
+
+#input-form-1::placeholder {
+  color: black;
 }
 
 #edit-description {
@@ -39,3 +44,10 @@
   display: flex;
 }
 
+.navbar-edit {
+  // top: 0px;
+  top: 0px !important;
+  @media screen and (max-width: $break-ipad){
+    // top: -50px;
+  }
+}

@@ -1,4 +1,7 @@
-<%= link_to "Cancel", user_path(@user) %>
+<div class="profile-navbar navbar-edit">
+  <h4><%= link_to "Cancel", user_path(@user) %></h4>
+  <h4><%= link_to "Save", user_path(@user) %></h4>
+</div>
 
 <div class="profile-content">
     <h1><%= @user.username %></h1>
@@ -15,7 +18,7 @@
       <ul>
         <li>
           <%= form_for Track.new, :url => create_track_path(@track), :html => { :id => "form-track-1" } do |f| %>
-            <%= f.text_field :youtube_url, placeholder: "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour1stBanger", id: "input-form-1" %>
+            <%= f.text_field :youtube_url, placeholder: @user.user_track_relationships.where(position: 1).first.track.youtube_url || "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour1stBanger", id: "input-form-1" %>
             <%= hidden_field_tag 'position', '1'  %>
           <% end %>
         </li>

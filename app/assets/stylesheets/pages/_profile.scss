@@ -43,6 +43,7 @@
     white-space: nowrap;
     overflow: hidden;
     margin-bottom: 2px;
+    font-weight: 700;
     // @media screen and (max-width: $break-ipad){
     //     background-image: linear-gradient(to right, #000 91%, transparent 100%);
     //     color:transparent;
@@ -123,6 +124,8 @@
 }
 
 #description {
+  min-width: 20px!important;
+  max-width: 841.5px !important;
   transition: width 0.25s;
   text-align: center;
   text-transform: uppercase;
@@ -135,6 +138,42 @@
     color: black;
     outline: none;
   }
+  @media screen and (max-width: $break-large){
+    width: 84%;
+  }
+  @media screen and (max-width: $break-ipad){
+    width: 70%;
+  }
 }
 
+.profile-navbar {
+  position: absolute;
+  margin: 0 auto;
+  width: 100vw;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  h4 {
+    font-size: 20px;
+    @media screen and (max-width: $break-ipad){
+      font-size: 17px;
+      input {
+        padding: 0;
+      }
+    }
+  }
+  transition: all ease 0.2s;
+  // top: -50px;
+  padding: 2% 6%;
+  input {
+    background-color: transparent;
+    border: none;
+  }
+  z-index: 5;
+}
 
