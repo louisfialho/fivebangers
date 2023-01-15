@@ -1,18 +1,18 @@
-.input-form-1 {
+.track-forms {
   width: 100%;
   text-align: center;
   font-weight: 700;
 }
 
-.input-form-1:focus {
+.track-forms:focus {
   outline: none;
 }
 
-.input-form-1:focus::placeholder {
+.track-forms:focus::placeholder {
   color: transparent;
 }
 
-.input-form-1::placeholder {
+.track-forms::placeholder {
   color: black;
 }
 

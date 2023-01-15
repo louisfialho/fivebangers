@@ -18,30 +18,30 @@
       <ul>
         <li>
           <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
-            <%= f.text_field :youtube_url, placeholder: @user.user_track_relationships.where(position: 1).first.track.youtube_url || "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour1stBanger", class: "input-form-1" %>
+            <%= f.text_field :youtube_url, placeholder: !@user.user_track_relationships.where(position: 1).empty? ? @user.user_track_relationships.where(position: 1).first.track.youtube_url : "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour1stBanger", class: "track-forms" %>
             <%= hidden_field_tag 'position', '1'  %>
           <% end %>
         </li>
         <li>
           <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
-            <%= f.text_field :youtube_url, placeholder: @user.user_track_relationships.where(position: 2).first.track.youtube_url || "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour2ndBanger", class: "input-form-1" %>
+            <%= f.text_field :youtube_url, placeholder: !@user.user_track_relationships.where(position: 2).empty? ? @user.user_track_relationships.where(position: 2).first.track.youtube_url : "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour2ndBanger", class: "track-forms" %>
             <%= hidden_field_tag 'position', '2'  %>
           <% end %>
         <li>
           <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
-            <%= f.text_field :youtube_url, placeholder: @user.user_track_relationships.where(position: 3).first.track.youtube_url || "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour3rdBanger", class: "input-form-1" %>
+            <%= f.text_field :youtube_url, placeholder: !@user.user_track_relationships.where(position: 3).empty? ? @user.user_track_relationships.where(position: 3).first.track.youtube_url : "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour3rdBanger", class: "track-forms" %>
             <%= hidden_field_tag 'position', '3'  %>
           <% end %>
         </li>
         <li>
           <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
-            <%= f.text_field :youtube_url, placeholder: @user.user_track_relationships.where(position: 4).first.track.youtube_url || "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour4thBanger", class: "input-form-1" %>
+            <%= f.text_field :youtube_url, placeholder: !@user.user_track_relationships.where(position: 4).empty? ? @user.user_track_relationships.where(position: 4).first.track.youtube_url : "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour4thBanger", class: "track-forms" %>
             <%= hidden_field_tag 'position', '4'  %>
           <% end %>
         </li>
         <li>
           <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
-            <%= f.text_field :youtube_url, placeholder: @user.user_track_relationships.where(position: 5).first.track.youtube_url || "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour5thBanger", class: "input-form-1" %>
+            <%= f.text_field :youtube_url, placeholder: !@user.user_track_relationships.where(position: 5).empty? ? @user.user_track_relationships.where(position: 5).first.track.youtube_url : "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour5thBanger", class: "track-forms" %>
             <%= hidden_field_tag 'position', '5'  %>
           <% end %>
         </li>

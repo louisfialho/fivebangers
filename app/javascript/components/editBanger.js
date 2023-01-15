@@ -1,20 +1,24 @@
 const editBanger = () => {
 
-  const inputFormTrack1 = document.querySelector('.input-form-1');
+  const trackForms = document.querySelectorAll('.track-forms');
 
-  inputFormTrack1.addEventListener("paste", (event) => {
-    var clipboardData, pastedData;
-    event.stopPropagation();
-    event.preventDefault();
-    clipboardData = event.clipboardData || window.clipboardData;
-    pastedData = clipboardData.getData('Text');
+  trackForms.forEach(function(elem) {
+    elem.addEventListener("paste", function() {
 
-    // append 64 characters
-    var extendedUrl = pastedData.concat(makeid(60));
-    // vider field et remplacer par nv text rallonge
-    inputFormTrack1.value = extendedUrl;
-    // blur
-    inputFormTrack1.blur();
+      var clipboardData, pastedData;
+      event.stopPropagation();
+      event.preventDefault();
+      clipboardData = event.clipboardData || window.clipboardData;
+      pastedData = clipboardData.getData('Text');
+
+      // append 64 characters
+      var extendedUrl = pastedData.concat(makeid(60));
+      // vider field et remplacer par nv text rallonge
+      elem.value = extendedUrl;
+      // blur
+      elem.blur();
+
+    });
   });
 
   function makeid(length) {
