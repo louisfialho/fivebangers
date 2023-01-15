@@ -16,7 +16,15 @@ const editDescription = () => {
     for (var i in e) el.addEventListener(e[i],resize,false);
     resize();
   }
-  resizable(document.getElementById('edit-description'),24.15);
+
+  if (descriptionInput.placeholder == 'CLICK TO ADD A DESCRIPTION') {
+    resizable(document.getElementById('edit-description'),600);
+    descriptionInput.addEventListener('focus', (event) => {
+      resizable(descriptionInput,24.15);
+    });
+  } else {
+    resizable(descriptionInput,24.15);
+  }
 
 }
 
