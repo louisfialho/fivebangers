@@ -11,12 +11,20 @@ const editBanger = () => {
       clipboardData = event.clipboardData || window.clipboardData;
       pastedData = clipboardData.getData('Text');
 
-      // append 64 characters
-      var extendedUrl = pastedData.concat(makeid(60));
-      // vider field et remplacer par nv text rallonge
-      elem.value = extendedUrl;
-      // blur
-      elem.blur();
+      // if pasted data contains 'youtube'
+
+      if (pastedData.toLowerCase().includes("youtube")) {
+
+        // append 64 characters
+        var extendedUrl = pastedData.concat(makeid(60));
+        // vider field et remplacer par nv text rallonge
+        elem.value = extendedUrl;
+        // blur
+        elem.blur();
+
+      } else {
+        window.location.replace("https://www.5banger5.com/errors/only_youtube_urls");
+      }
 
     });
   });
