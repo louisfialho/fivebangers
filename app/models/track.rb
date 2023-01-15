@@ -8,7 +8,4 @@ class Track < ApplicationRecord
   validates :youtube_url, format: { with: /\A((http|https):\/\/)?(www.)?youtube.com\//,
 message: "use a YouTube url" }
 
-  before_create do
-    self.youtube_url = self.youtube_url + SecureRandom.urlsafe_base64 if self.youtube_url.length < 50
-  end
 end

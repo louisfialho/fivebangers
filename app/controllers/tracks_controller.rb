@@ -18,10 +18,6 @@ class TracksController < ApplicationController
       # assign the new track to the user and specify position
       UserTrackRelationship.create(user: @user, track: @track, position: @position)
     end
-      # refresh page
-      respond_to do |format|
-        format.html { redirect_to user_path(current_user) }
-      end
   end
 
   private

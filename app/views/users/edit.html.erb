@@ -1,55 +1,44 @@
-<div class="profile-navbar navbar-edit">
-  <h4><%= link_to "Cancel", user_path(@user) %></h4>
-  <h4><%= link_to "Save", user_path(@user) %></h4>
-</div>
 
-<div class="profile-content">
-    <h1><%= @user.username %></h1>
+<%= form_for @user do |f| %>
 
-    <div class="user-description">
-      <%= form_with model: @user do |f| %>
+  <div class="profile-navbar navbar-edit">
+    <h4><%= link_to "Cancel", user_path(@user) %></h4>
+    <h4><%= f.submit "Save" %></h4>
+  </div>
+
+  <div class="profile-content">
+      <h1><%= @user.username %></h1>
+
+      <div class="user-description">
         <div id="desc-ctn">
           <div>"</div><%= f.text_field :description, placeholder: @user.description || "CLICK TO ADD A DESCRIPTION", id: "edit-description", maxlength: 35 %><div>"</div>
         </div>
-      <% end %>
-    </div>
+      </div>
 
-    <div class="youtube-links">
-      <ul>
-        <li>
-          <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
-            <%= f.text_field :youtube_url, placeholder: !@user.user_track_relationships.where(position: 1).empty? ? @user.user_track_relationships.where(position: 1).first.track.youtube_url : "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour1stBanger", class: "track-forms" %>
-            <%= hidden_field_tag 'position', '1'  %>
-          <% end %>
-        </li>
-        <li>
-          <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
-            <%= f.text_field :youtube_url, placeholder: !@user.user_track_relationships.where(position: 2).empty? ? @user.user_track_relationships.where(position: 2).first.track.youtube_url : "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour2ndBanger", class: "track-forms" %>
-            <%= hidden_field_tag 'position', '2'  %>
-          <% end %>
-        <li>
-          <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
-            <%= f.text_field :youtube_url, placeholder: !@user.user_track_relationships.where(position: 3).empty? ? @user.user_track_relationships.where(position: 3).first.track.youtube_url : "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour3rdBanger", class: "track-forms" %>
-            <%= hidden_field_tag 'position', '3'  %>
-          <% end %>
-        </li>
-        <li>
-          <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
-            <%= f.text_field :youtube_url, placeholder: !@user.user_track_relationships.where(position: 4).empty? ? @user.user_track_relationships.where(position: 4).first.track.youtube_url : "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour4thBanger", class: "track-forms" %>
-            <%= hidden_field_tag 'position', '4'  %>
-          <% end %>
-        </li>
-        <li>
-          <%= form_for Track.new, :url => create_track_path(@track) do |f| %>
-            <%= f.text_field :youtube_url, placeholder: !@user.user_track_relationships.where(position: 5).empty? ? @user.user_track_relationships.where(position: 5).first.track.youtube_url : "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour5thBanger", class: "track-forms" %>
-            <%= hidden_field_tag 'position', '5'  %>
-          <% end %>
-        </li>
-      </ul>
-    </div>
-    <div class="updated-at">
-      <% if ! UserTrackRelationship.where(user: @user).empty? %>
-        © <%= link_to UserTrackRelationship.where(user: @user).last.created_at.strftime("%d/%m/%Y"), destroy_user_session_path, method: :delete %> ©
-      <% end %>
-    </div>
-</div>
+      <div class="youtube-links">
+        <ul>
+          <li>
+            <%= f.text_field :track_1, value: params[:track_1], placeholder: !@user.user_track_relationships.where(position: 1).empty? ? @user.user_track_relationships.where(position: 1).first.track.youtube_url : "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour1stBanger", class: "track-forms" %>
+          </li>
+          <li>
+            <%= f.text_field :track_2, value: params[:track_2], placeholder: !@user.user_track_relationships.where(position: 2).empty? ? @user.user_track_relationships.where(position: 2).first.track.youtube_url : "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour2ndBanger", class: "track-forms" %>
+          </li>
+          <li>
+            <%= f.text_field :track_3, value: params[:track_3], placeholder: !@user.user_track_relationships.where(position: 3).empty? ? @user.user_track_relationships.where(position: 3).first.track.youtube_url : "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour3rdBanger", class: "track-forms" %>
+          </li>
+          <li>
+            <%= f.text_field :track_4, value: params[:track_4], placeholder: !@user.user_track_relationships.where(position: 4).empty? ? @user.user_track_relationships.where(position: 4).first.track.youtube_url : "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour4thBanger", class: "track-forms" %>
+          </li>
+          <li>
+            <%= f.text_field :track_5, value: params[:track_5], placeholder: !@user.user_track_relationships.where(position: 5).empty? ? @user.user_track_relationships.where(position: 5).first.track.youtube_url : "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour5thBanger", class: "track-forms" %>
+          </li>
+        </ul>
+      </div>
+      <div class="updated-at">
+        <% if ! UserTrackRelationship.where(user: @user).empty? %>
+          © <%= link_to UserTrackRelationship.where(user: @user).last.created_at.strftime("%d/%m/%Y"), destroy_user_session_path, method: :delete %> ©
+        <% end %>
+      </div>
+  </div>
+
+  <% end %>
