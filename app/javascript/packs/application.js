@@ -20,7 +20,19 @@ import "controllers"
 import "bootstrap"
 
 import { errorDisplay } from "../components/error.js";
-import { editProfile } from "../components/editProfile.js";
+import { editDescription } from "../components/editDescription.js";
+import { editBanger } from "../components/editBanger.js";
+
 
 errorDisplay();
-editProfile();
+
+document.addEventListener('turbolinks:load', () => {
+
+  if (document.querySelector("#edit-description")) {
+    editDescription();
+  }
+
+  if (document.querySelector("#form-track-1")) {
+    editBanger();
+  }
+});

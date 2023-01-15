@@ -4,7 +4,11 @@
     <h1><%= @user.username %></h1>
 
     <div class="user-description">
-      <span>"</span><span id="description"><%= @user.description || "CLICK TO ADD A DESCRIPTION" %></span><span>"</span>
+      <%= form_with model: @user do |f| %>
+        <div id="desc-ctn">
+          <div>"</div><%= f.text_field :description, placeholder: @user.description || "CLICK TO ADD A DESCRIPTION", id: "edit-description", maxlength: 35 %><div>"</div>
+        </div>
+      <% end %>
     </div>
 
     <div class="youtube-links">
@@ -54,9 +58,3 @@
       <% end %>
     </div>
 </div>
-
-<%= form_with model: @user do |f| %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.submit %>
-<% end %>

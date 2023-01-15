@@ -123,8 +123,6 @@
 }
 
 #description {
-  min-width: 20px!important;
-  max-width: 841.5px !important;
   transition: width 0.25s;
   text-align: center;
   text-transform: uppercase;
@@ -137,23 +135,6 @@
     color: black;
     outline: none;
   }
-  @media screen and (max-width: $break-large){
-    width: 84%;
-  }
-  @media screen and (max-width: $break-ipad){
-    width: 70%;
-  }
 }
 
-.description-edit {
-  @media screen and (max-width: $break-large){
-    font-size: 20px;
-    display: block;
-    width: 100vw;
-  }
-  @media screen and (max-width: $break-ipad){
-    // font-size: 20px;
-    display: block;
-    width: 80vw;
-  }
-}
+
