@@ -30,9 +30,7 @@ document.addEventListener('turbolinks:load', () => {
 
   if (document.querySelector("#edit-description")) {
     editDescription();
-  }
-
-  if (document.querySelector("#form-track-1")) {
     editBanger();
   }
+
 });
