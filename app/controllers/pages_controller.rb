@@ -7,6 +7,9 @@ class PagesController < ApplicationController
   def club_is_full
   end
 
+  def only_youtube_urls
+  end
+
   def welcome
     @user = current_user
   end

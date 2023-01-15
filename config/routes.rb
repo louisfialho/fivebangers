@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   patch "users/:id", to: "users#update"
   post "tracks", to: "tracks#create", as: :create_track
   get '/errors/club_is_full', to: 'pages#club_is_full', as: "club_is_full"
+  get '/errors/only_youtube_urls', to: 'pages#only_youtube_urls', as: "only_youtube_urls"
 end

@@ -24,9 +24,6 @@ import { editDescription } from "../components/editDescription.js";
 import { editBanger } from "../components/editBanger.js";
 import { submitForms } from "../components/submitForms.js";
 
-
-errorDisplay();
-
 document.addEventListener('turbolinks:load', () => {
 
   if (document.querySelector("#edit-description")) {
@@ -38,4 +35,7 @@ document.addEventListener('turbolinks:load', () => {
     submitForms();
   }
 
+  if (document.querySelector(".error-bangers")) {
+    errorDisplay();
+  }
 });
