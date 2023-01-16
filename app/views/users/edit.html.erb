@@ -36,7 +36,9 @@
       </div>
       <div class="updated-at">
         <% if ! UserTrackRelationship.where(user: @user).empty? %>
-          © <%= link_to UserTrackRelationship.where(user: @user).last.created_at.strftime("%d/%m/%Y"), destroy_user_session_path, method: :delete %> ©
+          © <%= UserTrackRelationship.where(user: @user).last.created_at.strftime("%d/%m/%Y") %> ©
+        <% else %>
+          © <%= @user.created_at.strftime("%d/%m/%Y") %> ©
         <% end %>
       </div>
   </div>

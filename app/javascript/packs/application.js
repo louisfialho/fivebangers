@@ -24,6 +24,7 @@ import { editDescription } from "../components/editDescription.js";
 import { editBanger } from "../components/editBanger.js";
 import { submitForms } from "../components/submitForms.js";
 import { blinking } from "../components/blinking.js";
+import { welcome } from "../components/welcome.js";
 
 document.addEventListener('turbolinks:load', () => {
 
@@ -39,5 +40,9 @@ document.addEventListener('turbolinks:load', () => {
 
   if (document.querySelector(".error-bangers")) {
     errorDisplay();
+  }
+
+  if (document.querySelector("#start-btn")) {
+    welcome();
   }
 });

@@ -1,25 +1,30 @@
 <div class="welcome-container">
- <!-- <h3 class="blink_me" id="start-btn">CLICK TO START</h3> -->
+  <h3 class="blink_me" id="start-btn">CLICK TO START</h3>
     <h3 class="welcome-text" data-text="1">
-    WELCOME <%= @user.username %>
+    <%= current_user.username %>, WELCOME TO 5BANGER5.
   </h3>
 
   <h3 class="welcome-text">
-    5BANGER5 is a private club for djs and selectors to share their favorite gems together.
+    DO NOT TELL ANYONE ABOUT 5BANGER5.  5BANGERS IS A SECRET ORGANIZATION WITH
+    A LIMITED NUMBER OF MEMBERS. MEMBERS ARE NAMED AFTER THEIR ORDER OF ARRIVAL. AA000 IS THE FIRST MEMBER. ZZ999 IS THE LAST MEMBER. YOU ARE <%= current_user.username %>.
   </h3>
 
   <h3 class="welcome-text">
-    We don’t expect any specific genre, we just want bangers.
+    MEMBERS ARE SELECTED BECAUSE OF THEIR UNIQUE TASTE IN MUSIC.THEY ARE THEN
+    INVITED TO SHARE THEIR 5 FAVORITE TRACKS WITH THE COMMUNITY. IN TURN, THEY CAN
+    DISCOVER NEW TRACKS THEY LOVE  BY SEARCHING FOR  OTHER MEMBERS PROFILES.
   </h3>
 
   <h3 class="welcome-text">
-    Please don’t tell anyone about 5BANGER5 unless they have exceptional taste.
+    WE DO NOT EXPECT ANY SPECIFIC GENRE: WE ONLY WANT BANGERS. WE LOVE WORLD MUSIC WITH CLUB POTENTIAL... BUT YOU ARE FREE TO SHARE THE MUSIC YOU LOVE. JUST REMEMBER WE DO NOT ACCEPT CONFORMITY.
   </h3>
 
-  <%= link_to edit_user_path(@user), id: "start-link" do %>
+
+  <%= link_to edit_user_path(current_user), id: "start-link" do %>
     <div class="welcome-text">
       <h3 class="blink_me">CLICK TO START</h3>
     </div>
   <% end %>
+  <audio src="<%= audio_path 'intro.mp3'%>" id="music_source" type="audio/mpeg">
+  </audio>
 </div>
-

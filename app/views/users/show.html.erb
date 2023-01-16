@@ -1,8 +1,11 @@
-<% if @user == current_user %>
-  <h4><%= link_to "Edit", edit_user_path(@user) %></h4>
-<% else %>
-  <h4><%= link_to "My profile", user_path(current_user) %></h4>
-<% end %>
+<div class="profile-navbar navbar-edit">
+  <% if @user == current_user %>
+    <h4><%= link_to "Edit", edit_user_path(@user) %></h4>
+  <% else %>
+    <h4><%= link_to "My profile", user_path(current_user) %></h4>
+  <% end %>
+  <h4><%= link_to "Log out", destroy_user_session_path, method: :delete %></h4>
+</div>
 
 <div class="profile-content">
     <h1><%= @user.username %></h1>
@@ -34,7 +37,9 @@
     </div>
     <div class="updated-at">
       <% if ! UserTrackRelationship.where(user: @user).empty? %>
-        © <%= link_to UserTrackRelationship.where(user: @user).last.created_at.strftime("%d/%m/%Y"), destroy_user_session_path, method: :delete %> ©
+        © <%= UserTrackRelationship.where(user: @user).last.created_at.strftime("%d/%m/%Y") %> ©
+      <% else %>
+        © <%= @user.created_at.strftime("%d/%m/%Y") %> ©
       <% end %>
     </div>
 </div>
@@ -61,8 +66,3 @@
   <p><%= user_track_relationship.track.youtube_url %></p> <br>
 <% end %>
 -->
-
-<% if current_user == @user %>
-  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-<% end %>
-
