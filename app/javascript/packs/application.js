@@ -23,12 +23,14 @@ import { errorDisplay } from "../components/error.js";
 import { editDescription } from "../components/editDescription.js";
 import { editBanger } from "../components/editBanger.js";
 import { submitForms } from "../components/submitForms.js";
+import { blinking } from "../components/blinking.js";
 
 document.addEventListener('turbolinks:load', () => {
 
   if (document.querySelector("#edit-description")) {
     editDescription();
     editBanger();
+    blinking();
   }
 
   if (document.querySelector("#save-btn")) {

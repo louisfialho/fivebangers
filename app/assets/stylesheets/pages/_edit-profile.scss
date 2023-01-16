@@ -23,12 +23,19 @@
   text-align: center;
   text-transform: uppercase;
   font-weight: 500;
+  animation: blinker 1.5s linear infinite;
   &:focus {
     background-color: white;
     text-decoration: none;
     border: none;
     color: black;
     outline: none;
+  }
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
   }
 }
 
