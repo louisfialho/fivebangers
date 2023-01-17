@@ -25,6 +25,7 @@ import { editBanger } from "../components/editBanger.js";
 import { submitForms } from "../components/submitForms.js";
 import { blinking } from "../components/blinking.js";
 import { welcome } from "../components/welcome.js";
+import { backdoor } from "../components/backdoor.js";
 
 document.addEventListener('turbolinks:load', () => {
 
@@ -44,5 +45,9 @@ document.addEventListener('turbolinks:load', () => {
 
   if (document.querySelector("#start-btn")) {
     welcome();
+  }
+
+  if (document.querySelector(".backdoor-entry")) {
+    backdoor();
   }
 });

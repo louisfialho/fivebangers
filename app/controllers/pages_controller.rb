@@ -4,6 +4,9 @@ class PagesController < ApplicationController
   def home
   end
 
+  def new_or_existing_member
+  end
+
   def club_is_full
   end
 
