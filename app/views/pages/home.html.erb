@@ -18,7 +18,7 @@
       <%= link_to "Become a member", new_user_registration_path, class:"home-btn" %>
     </div>
     <div class="footer-home">
-      <%= link_to 'Dancefloor', (user_signed_in? ? profile_path(current_user.username) : club_is_full_path) %>
+      <%= link_to 'Dancefloor', (user_signed_in? ? user_path(current_user) : club_is_full_path) %>
       <%= link_to 'Lounge Bar', club_is_full_path %>
       <%= link_to 'Terrace', club_is_full_path %>
       <%= link_to 'Smoking Room', club_is_full_path %>

@@ -2,7 +2,11 @@
 <%= form_for @user do |f| %>
 
   <div class="profile-navbar navbar-edit">
-    <h4><%= link_to "Cancel", user_path(@user) %></h4>
+    <% if @user.tracks.empty? %>
+      <h4><%= link_to "Help", help_path %></h4>
+    <% else %>
+      <h4><%= link_to "Cancel", user_path(@user) %></h4>
+    <% end %>
     <h4><%= f.submit "Save" %></h4>
   </div>
 

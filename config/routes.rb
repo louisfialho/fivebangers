@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'pages/welcome', to: 'pages#welcome', as: "welcome"
   get 'pages/backdoor', to: 'pages#new_or_existing_member', as: "new_or_existing_member"
+  get 'pages/help', to: 'pages#help_adding_bangers', as: "help"
   get 'users/:id', to: 'users#show', as: :user
   get "users/:id/edit", to: "users#edit", as: :edit_user
   patch "users/:id", to: "users#update"

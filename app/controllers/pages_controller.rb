@@ -4,6 +4,9 @@ class PagesController < ApplicationController
   def home
   end
 
+  def help_adding_bangers
+  end
+
   def new_or_existing_member
   end
 
