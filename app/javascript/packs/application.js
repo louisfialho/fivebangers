@@ -26,6 +26,7 @@ import { submitForms } from "../components/submitForms.js";
 import { blinking } from "../components/blinking.js";
 import { welcome } from "../components/welcome.js";
 import { backdoor } from "../components/backdoor.js";
+import { passwordFont } from "../components/password.js";
 
 document.addEventListener('turbolinks:load', () => {
 
@@ -49,5 +50,9 @@ document.addEventListener('turbolinks:load', () => {
 
   if (document.querySelector(".backdoor-entry")) {
     backdoor();
+  }
+
+  if (document.querySelector(".form-backdoor")) {
+    passwordFont();
   }
 });
