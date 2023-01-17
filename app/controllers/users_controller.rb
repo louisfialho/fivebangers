@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by(username: params[:username].upcase)
     @dancefloor = []
     UserTrackRelationship.all.order(updated_at: :desc).each do |relationship|
       @dancefloor.push(relationship.user) unless @dancefloor.include?(relationship.user)
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.find_by(username: params[:username].upcase)
   end
 
   def update
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
       end
     end
     # create tracks, relationships
-    redirect_to user_path(@user)
+    redirect_to user_path(@user.username)
   end
 
   private
