@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_placeholder_no_banger, only: [:show, :edit]
 
   def show
     @user = User.find_by(username: params[:username].upcase)
@@ -37,6 +38,16 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def set_placeholder_no_banger
+    if device == "mobile"
+      @placeholder = "www.youtube.com/AddBanger"
+    elsif device == "tablet"
+      @placeholder = "www.youtube.com/EditAndPasteBanger"
+    elsif device == "desktop"
+      @placeholder = "www.youtube.com/EditAndPasteYTLinkForBanger"
+    end
+  end
 
   def user_params
     params.require(:user).permit(:description, :track_1, :track_2, :track_3, :track_4, :track_5)

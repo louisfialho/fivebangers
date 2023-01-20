@@ -15,26 +15,26 @@
 
       <div class="user-description">
         <div id="desc-ctn">
-          <div>"</div><%= f.text_field :description, placeholder: @user.description || "CLICK TO ADD A DESCRIPTION", id: "edit-description", maxlength: 15 %><div>"</div>
+          <div>"</div><%= f.text_field :description, placeholder: @user.description || "ADD DESCRIPTION", id: "edit-description", maxlength: 15 %><div>"</div>
         </div>
       </div>
 
       <div class="youtube-links">
         <ul>
           <li>
-            <%= f.text_field :track_1, value: params[:track_1], placeholder: !@user.user_track_relationships.where(position: 1).empty? ? @user.user_track_relationships.where(position: 1).first.track.youtube_url : "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour1stBanger", class: "track-forms" %>
+            <%= f.text_field :track_1, value: params[:track_1], placeholder: !@user.user_track_relationships.where(position: 1).empty? ? @user.user_track_relationships.where(position: 1).first.track.youtube_url : "#{@placeholder}1", class: "track-forms" %>
           </li>
           <li>
-            <%= f.text_field :track_2, value: params[:track_2], placeholder: !@user.user_track_relationships.where(position: 2).empty? ? @user.user_track_relationships.where(position: 2).first.track.youtube_url : "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour2ndBanger", class: "track-forms" %>
+            <%= f.text_field :track_2, value: params[:track_2], placeholder: !@user.user_track_relationships.where(position: 2).empty? ? @user.user_track_relationships.where(position: 2).first.track.youtube_url : "#{@placeholder}2", class: "track-forms" %>
           </li>
           <li>
-            <%= f.text_field :track_3, value: params[:track_3], placeholder: !@user.user_track_relationships.where(position: 3).empty? ? @user.user_track_relationships.where(position: 3).first.track.youtube_url : "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour3rdBanger", class: "track-forms" %>
+            <%= f.text_field :track_3, value: params[:track_3], placeholder: !@user.user_track_relationships.where(position: 3).empty? ? @user.user_track_relationships.where(position: 3).first.track.youtube_url : "#{@placeholder}3", class: "track-forms" %>
           </li>
           <li>
-            <%= f.text_field :track_4, value: params[:track_4], placeholder: !@user.user_track_relationships.where(position: 4).empty? ? @user.user_track_relationships.where(position: 4).first.track.youtube_url : "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour4thBanger", class: "track-forms" %>
+            <%= f.text_field :track_4, value: params[:track_4], placeholder: !@user.user_track_relationships.where(position: 4).empty? ? @user.user_track_relationships.where(position: 4).first.track.youtube_url : "#{@placeholder}4", class: "track-forms" %>
           </li>
           <li>
-            <%= f.text_field :track_5, value: params[:track_5], placeholder: !@user.user_track_relationships.where(position: 5).empty? ? @user.user_track_relationships.where(position: 5).first.track.youtube_url : "https://www.youtube.com/ClickAndPasteTheYTLinkOfYour5thBanger", class: "track-forms" %>
+            <%= f.text_field :track_5, value: params[:track_5], placeholder: !@user.user_track_relationships.where(position: 5).empty? ? @user.user_track_relationships.where(position: 5).first.track.youtube_url : "#{@placeholder}5", class: "track-forms" %>
           </li>
         </ul>
       </div>
