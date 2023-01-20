@@ -30,7 +30,7 @@
               <li class="youtube-link"><%="#{@placeholder}5"%></li>
             <% end %>
           <% else %>
-            <li class="youtube-link"><%= link_to @user.user_track_relationships.where(position: i).first.track.youtube_url, @user.user_track_relationships.where(position: i).first.track.youtube_url, target: :_blank %></li>
+            <li class="youtube-link"><%= link_to @user.user_track_relationships.where(position: i).first.track.youtube_url.sub("https://", "").sub("watch?v=", ""), @user.user_track_relationships.where(position: i).first.track.youtube_url, target: :_blank %></li>
           <% end %>
         <% end %>
       </ul>

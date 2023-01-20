@@ -24,19 +24,21 @@
 }
 
 .youtube-links {
-  text-align: center;
   @media screen and (max-width: $break-ipad){
     // width: 100%;
   }
 }
 
 .youtube-links > ul {
-  @media screen and (max-width: $break-ipad){
-    font-size: 19px;
-    // width: 100%;
+  @media(max-width: $break-ipad){
+    font-size: 21px;
+    width: 80vw;
     font-weight: bold;
   }
-  width: 31em;
+  @media(max-width: 1300px){
+    width: 65vw;
+  }
+  width: 50vw;
   list-style: none;
   font-size: 28px;
   padding-left: 0px;
