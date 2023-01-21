@@ -20,10 +20,10 @@ const editDescription = () => {
   if (descriptionInput.placeholder == 'ADD DESCRIPTION') {
     resizable(document.getElementById('edit-description'),document.getElementById('edit-description').offsetWidth + 55);
     descriptionInput.addEventListener('focus', (event) => {
-      resizable(descriptionInput,23.15);
+      resizable(descriptionInput,25);
     });
   } else {
-    resizable(descriptionInput,23.15);
+    resizable(descriptionInput,25);
   }
 
 }

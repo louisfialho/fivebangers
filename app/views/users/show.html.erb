@@ -19,15 +19,15 @@
         <% for i in 1..5 %>
           <% if @user.user_track_relationships.where(position: i).empty? %>
             <% if i==1 %>
-              <li class="youtube-link" id="link-1" display=""><%="#{@placeholder}1"%></li>
+              <li class="youtube-link" id="link-1" display="">www.youtube.com/AddBanger1AddBanger1AddBanger1AddBanger1AddBanger1AddBanger1AddBanger1AddBanger1</li>
             <% elsif i==2 %>
-              <li class="youtube-link"><%="#{@placeholder}2"%></li>
+              <li class="youtube-link">www.youtube.com/AddBanger2AddBanger2AddBanger2AddBanger2AddBanger2AddBanger2AddBanger2AddBanger2</li>
             <% elsif i==3 %>
-              <li class="youtube-link"><%="#{@placeholder}3"%></li>
+              <li class="youtube-link">www.youtube.com/AddBanger3AddBanger3AddBanger3AddBanger3AddBanger3AddBanger3AddBanger3AddBanger3</li>
             <% elsif i==4 %>
-              <li class="youtube-link"><%="#{@placeholder}4"%></li>
+              <li class="youtube-link">www.youtube.com/AddBanger4AddBanger4AddBanger4AddBanger4AddBanger4AddBanger4AddBanger4AddBanger4</li>
             <% elsif i==5 %>
-              <li class="youtube-link"><%="#{@placeholder}5"%></li>
+              <li class="youtube-link">www.youtube.com/AddBanger5AddBanger5AddBanger5AddBanger5AddBanger5AddBanger5AddBanger5AddBanger5</li>
             <% end %>
           <% else %>
             <li class="youtube-link"><%= link_to @user.user_track_relationships.where(position: i).first.track.youtube_url.sub("https://", "").sub("watch?v=", ""), @user.user_track_relationships.where(position: i).first.track.youtube_url, target: :_blank %></li>
