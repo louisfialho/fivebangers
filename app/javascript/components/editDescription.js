@@ -17,13 +17,13 @@ const editDescription = () => {
     resize();
   }
 
-  if (descriptionInput.placeholder == 'CLICK TO ADD A DESCRIPTION') {
-    resizable(document.getElementById('edit-description'),600);
+  if (descriptionInput.placeholder == 'ADD DESCRIPTION') {
+    resizable(document.getElementById('edit-description'),document.getElementById('edit-description').offsetWidth + 55);
     descriptionInput.addEventListener('focus', (event) => {
-      resizable(descriptionInput,24.15);
+      resizable(descriptionInput,23.15);
     });
   } else {
-    resizable(descriptionInput,24.15);
+    resizable(descriptionInput,23.15);
   }
 
 }
