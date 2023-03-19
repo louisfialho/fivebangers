@@ -87,6 +87,9 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  host = 'localhost:3000'
+  config.action_mailer.default_url_options = { :host => 'localhost:3000', protocol: 'http' }
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
