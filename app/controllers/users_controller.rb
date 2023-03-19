@@ -2,6 +2,15 @@ class UsersController < ApplicationController
 
   skip_before_action :authenticate_user!, :only => [:show]
 
+  def create
+    @user = User.new(user_params)
+
+    respond_to do |format|
+      if @user.save
+        # Tell the UserMailer to send a welcome email after save
+        UserMailer.with(user: @user).welcome_email.deliver_now
+  end
+
   def show
     @user = User.find_by(username: params[:username].upcase)
     @dancefloor = []

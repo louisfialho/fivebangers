@@ -13,7 +13,7 @@ const editBanger = () => {
 
       // if pasted data contains 'youtube'
 
-      if (pastedData.toLowerCase().includes("out")) { // needs to support youtube.com and youtu.be
+      if (pastedData.toLowerCase().includes("youtu")) { // needs to support youtube.com and youtu.be
 
         // append 64 characters
         var extendedUrl = pastedData.concat(makeid(60));
