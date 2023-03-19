@@ -90,10 +90,10 @@ Rails.application.configure do
 
 
   config.action_mailer.delivery_method = :smtp
-  #host = '5banger5.com' #replace with your own url
-  host = 'localhost:3000'
-  #config.action_mailer.default_url_options = { host: host }
-  config.action_mailer.default_url_options = { :host => 'localhost:3000', protocol: 'http' }
+  host = '5banger5.com' #replace with your own url
+  #host = 'localhost:3000'
+  config.action_mailer.default_url_options = { host: host }
+  #config.action_mailer.default_url_options = { :host => 'localhost:3000', protocol: 'http' }
 
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
